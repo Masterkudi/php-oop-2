@@ -1,8 +1,12 @@
 <?php
 
+require_once __DIR__ . "/classes/cats.php";
+require_once __DIR__ . "/classes/dogs.php";
 require_once __DIR__ . "/classes/petFood.php";
 require_once __DIR__ . "/classes/petKennels.php";
 require_once __DIR__ . "/classes/petToys.php";
+require_once __DIR__ . "/classes/products.php";
+
 
 ?>
 
@@ -32,7 +36,30 @@ require_once __DIR__ . "/classes/petToys.php";
 </head>
 
 <body>
+<header>
+        <div class="container text-center">
+            <h1 class="display-1 mt-5 fw-semibold"> Animals Products</h1>
+        </div>
+    </header>
+    <main>
+        <div class="container mt-5 pb-5">
+            <div class="row row-cols-3 g-5">
+                <?php foreach ($productList as $product) { ?>
+                    <div class="col text-center">
+                        <div class="card h-100 rounded-4">
+                            <img src="<?php echo $product->getImg() ?>" class="card-img-top rounded-4" alt="...">
+                            <div class="card-body d-flex flex-column">
+                                <small> <strong>Specie:</strong> <?php echo $product->getCategoria() ?></small>
+                                <h5 class="card-title mt-3"><?php echo $product->getNome() ?></h5>
+                                <p class="card-text mt-auto"> <strong>Prezzo: </strong> <?php echo $product->getPrezzo() ?> €</p>
+                            </div>
+                        </div>
+                    </div>
+                <?php } ?>
 
+            </div>
+        </div>
+    </main>
 </body>
 
 </html>
