@@ -38,7 +38,7 @@ require_once __DIR__ . "/classes/products.php";
 <body>
 <header>
         <div class="container text-center">
-            <h1 class="display-1 mt-5 fw-semibold"> Animals Products</h1>
+            <h1 class="display-1 mt-5 fw-semibold">Pet Shop</h1>
         </div>
     </header>
     <main>
@@ -47,11 +47,11 @@ require_once __DIR__ . "/classes/products.php";
                 <?php foreach ($productList as $product) { ?>
                     <div class="col text-center">
                         <div class="card h-100 rounded-4">
-                            <img src="<?php echo $product->getImg() ?>" class="card-img-top rounded-4" alt="...">
+                            <img src="<?php echo $productList->getImg() ?>" class="card-img-top rounded-4" alt="...">
                             <div class="card-body d-flex flex-column">
-                                <small> <strong>Specie:</strong> <?php echo $product->getCategoria() ?></small>
-                                <h5 class="card-title mt-3"><?php echo $product->getNome() ?></h5>
-                                <p class="card-text mt-auto"> <strong>Prezzo: </strong> <?php echo $product->getPrezzo() ?> €</p>
+                                <small> <strong>Specie:</strong> <?php echo $productList->getCategory() ?></small>
+                                <h5 class="card-title mt-3"><?php echo $productList->getName() ?></h5>
+                                <p class="card-text mt-auto"> <strong>Price: </strong> <?php echo $productList->getPrice() ?> €</p>
                             </div>
                         </div>
                     </div>
